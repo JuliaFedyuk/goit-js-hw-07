@@ -8,6 +8,9 @@ img {
   height: auto;
 }
 
+h1 {
+  color: #4caf50;
+}
 #gallery {
   margin: 0;
   padding: 0;
