@@ -1,17 +1,9 @@
-const items = [...document.querySelectorAll("li.item")];
-console.log(`В списке ${items.length} категории.`);
+const itemsRef = document.querySelectorAll("li.item");
+console.log(`в списке ${itemsRef.length} категории`);
 
-const info = items
-  .map((item) => {
-    const title = item.querySelector("h2");
-    const list = item.querySelectorAll("ul li");
-    return { title: title.textContent, count: list.length };
-  })
-  .forEach((entry) => {
-    console.log(
-      "Категория: ",
-      entry.title,
-      "\r\nКоличество элементов: ",
-      entry.count
-    );
-  });
+itemsRef.forEach((item) => {
+  const heading = item.querySelector("h2");
+  console.log("Категория:", heading.textContent);
+  const list = item.querySelectorAll("ul li");
+  console.log("Количество элементов:", list.length);
+});

@@ -17,10 +17,8 @@ const images = [
 ];
 
 const galleryList = document.querySelector("#gallery");
-const liRef = images.forEach(({ ...images }) => {
-  galleryList.insertAdjacentHTML(
-    "afterbegin",
-    ` <li> <img alt = ${images.alt} src = ${images.url} > </li>`
-  );
+const liRef = images.map(({ ...images }) => {
+  return ` <li> <img alt = '${images.alt}' src = '${images.url}' > </li>`;
 });
+galleryList.insertAdjacentHTML("afterbegin", liRef.join(" "));
 console.log(liRef);
